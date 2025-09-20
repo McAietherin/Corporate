@@ -1,0 +1,195 @@
+@use 'mixins' as *;
+$urba: "Urbanist", sans-serif;
+
+body {
+    background-color: #e8e8e8;
+    overflow-x: hidden;
+}
+
+#spacer {
+    padding-top: 90px;
+}
+
+.button {
+    padding: 11px 19px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    border-radius: 16px;
+    font-weight: 500;
+}
+
+.inv {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: black;
+}
+
+.button:hover {
+    background-color: #808080;
+    color: white;
+}
+
+#beige {
+    background-color: beige;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 100;
+
+    h1 {
+        display: inline-block;
+        background-image: url('https://images.unsplash.com/photo-1498036882173-b41c28a8ba34?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 320px;
+        font-weight: bolder;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h2 {
+        position: absolute;
+        left: 50%;
+        top: 53%;
+        transform: translate(-50%, -50%);
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        background-color: deeppink;
+        padding: 15px 50px;
+        position: absolute;
+        top: 64%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+        font-size: larger;
+        font-weight: 500;
+    }
+}
+
+.logo {
+    overflow: hidden;
+    height: 60px;
+
+    img {
+        height: 100%;
+        transform: scale(1.9);
+        @include position(relative, 12px, -11px);
+    }
+}
+
+nav {
+    background-color: #1c1919;
+    color: #ffffff;
+    height: 70px;
+    width: 100vw;
+    letter-spacing: 1px;
+    @include flex(center);
+    @include position(fixed, 0, 0, 5);
+
+    >div {
+        width: 88%;
+        margin: auto;
+        @include flex(center, space-between);
+
+        ul {
+            @include flex(center, space-between);
+            gap: 25px;
+            font-family: "Urbanist", sans-serif;
+
+            li {
+                list-style-type: none;
+                display: flex;
+                gap: 7px;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #1c1919;
+    color: white;
+    font-family: "Urbanist", sans-serif;
+    padding: 90px 0;
+    letter-spacing: 1px;
+    @include flex(center);
+
+    ul li {
+        list-style-type: none;
+    }
+
+    >div {
+        width: 88%;
+        margin: auto;
+
+        #box {
+            display: grid;
+            grid-template-columns: 3fr repeat(3, 1fr);
+            row-gap: 10px;
+            border: 2px solid white;
+            padding: 4vw;
+            border-radius: 18px;
+
+            >p {
+                font-weight: bold;
+                font-size: large;
+            }
+        }
+    }
+}
+
+#ender{
+    margin-top: 35px;
+    @include flex(center, space-between);
+    ul{
+        @include flex(start, space-between);
+        gap: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    #beige {
+        h1 {
+            font-size: 235px;
+        }
+
+        h2 {
+            font-size: large;
+            top: 48%;
+        }
+
+        a {
+            top: 58%;
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    #beige {
+        h1 {
+            font-size: 150px;
+        }
+
+        h2 {
+            font-size: 18px;
+            top: 47%;
+            width: 200px;
+        }
+
+        a {
+            padding: 16px 30px;
+            font-size: 4vw;
+        }
+    }
+}

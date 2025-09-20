@@ -1,0 +1,20 @@
+@mixin flex($ai: start, $jc: start, $fd: row) {
+    display: flex;
+    align-items: $ai;
+    justify-content: $jc;
+    flex-direction: $fd;
+}
+
+
+@mixin position($ps: static, $tp: auto, $lt: auto, $zi: 0) {
+    position: $ps;
+    top: $tp;
+    left: $lt;
+    z-index: $zi;
+}
+
+@mixin font($ff, $fw, $fs: 16px) {
+    font-family: $ff;
+    font-weight: $fw;
+    font-size: $fs;
+}
