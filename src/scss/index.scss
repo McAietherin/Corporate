@@ -1,4 +1,5 @@
 @use 'mixins' as *;
+@use 'keyframes' as *;
 $urba: "Urbanist", sans-serif;
 
 body {
@@ -7,7 +8,7 @@ body {
 }
 
 #spacer {
-    padding-top: 90px;
+    padding-top: 70px;
 }
 
 .button {
@@ -15,7 +16,7 @@ body {
     border: 2px solid white;
     background-color: transparent;
     color: white;
-    border-radius: 16px;
+    border-radius: 14px;
     font-weight: 500;
 }
 
@@ -95,6 +96,7 @@ nav {
     height: 70px;
     width: 100vw;
     letter-spacing: 1px;
+    box-shadow: 1px 1px 10px 5px #000000bd;
     @include flex(center);
     @include position(fixed, 0, 0, 5);
 
@@ -132,31 +134,258 @@ footer {
     >div {
         width: 88%;
         margin: auto;
-
-        #box {
-            display: grid;
-            grid-template-columns: 3fr repeat(3, 1fr);
-            row-gap: 10px;
-            border: 2px solid white;
-            padding: 4vw;
-            border-radius: 18px;
-
-            >p {
-                font-weight: bold;
-                font-size: large;
-            }
-        }
     }
 }
 
-#ender{
+#box {
+    display: grid;
+    grid-template-columns: 3fr repeat(3, 1fr);
+    row-gap: 10px;
+    border: 2px solid white;
+    padding: 4vw;
+    border-radius: 18px;
+
+    >p {
+        font-weight: bold;
+        font-size: large;
+    }
+
+    ul {
+        @include flex($fd: column);
+        gap: 18px;
+    }
+}
+
+#inpu {
+    @include flex(start, start, column);
+    gap: 20px;
+
+    >p {
+        width: 90%;
+    }
+}
+
+#inper {
+    width: 90%;
+    gap: 20px;
+    @include flex();
+
+    input {
+        all: unset;
+        padding: 11px 19px;
+        border: 2px solid white;
+        background-color: transparent;
+        color: white;
+        border-radius: 14px;
+        font-weight: 500;
+        width: 58%;
+    }
+
+    p {
+        font-weight: bold;
+    }
+}
+
+#small {
+    font-size: 12px;
+}
+
+#ender {
     margin-top: 35px;
     @include flex(center, space-between);
-    ul{
+
+    ul {
         @include flex(start, space-between);
         gap: 40px;
     }
 }
+
+.field {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        filter: brightness(55%);
+    }
+
+    .overlay {
+        width: 60%;
+        position: absolute;
+        top: 43%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        text-align: center;
+        color: white;
+        padding: 0 2rem;
+        @include flex(center, space-between, column);
+        gap: 30px;
+    }
+
+    h1 {
+        font-size: 65px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+}
+
+.boutons {
+    display: flex;
+    gap: 25px;
+
+    .spc {
+        background-color: transparent;
+        border: 0px;
+    }
+
+    .spc:hover {
+        background-color: transparent;
+        border: 0px;
+        font-size: 17px;
+        color: blue !important;
+    }
+}
+
+.eight {
+    width: 88%;
+    margin: auto;
+}
+
+.betn {
+    @include flex(center, space-between, column);
+    gap: 20px;
+    text-align: center;
+}
+
+#black .button {
+    color: black;
+    border-color: black;
+    margin: 59px 0 120px 0;
+}
+
+main {
+    margin-top: 100px;
+
+    h6 {
+        font-size: 17px;
+    }
+
+    h2 {
+        font-size: 45px;
+        width: 60%;
+        font-weight: 630;
+        line-height: 55px;
+    }
+
+    p {
+        width: 60%;
+    }
+}
+
+.perks {
+    margin-top: 65px;
+    width: 100%;
+    @include flex(start, space-between);
+}
+
+.perk {
+    opacity: 0;
+    width: 30%;
+    height: 50vh;
+    @include flex(center, $fd: column);
+    gap: 23px;
+
+    h3 {
+        font-size: 32px;
+        font-weight: 620;
+    }
+
+    p {
+        width: 100%;
+    }
+}
+
+.perkimg {
+    filter: brightness(80%);
+    height: 55%;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 13px;
+
+    img {
+        width: 100%;
+    }
+}
+
+.dark {
+    color: white;
+    background-color: #1c1919;
+}
+
+.numcom {
+    padding: 25px 0;
+    display: flex;
+    gap: 20px;
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+.pics {
+    @include flex(center, space-between);
+    gap: 40px;
+    margin: 20px 0 165px 0;
+
+    >div {
+        width: 50%;
+    }
+}
+
+.pic2{
+    position: relative;
+    left: 40px
+}
+
+.pictext {
+    @include flex(start, space-between, column);
+    gap: 20px;
+    h6 {
+        width: 100%;
+    }
+
+    h2 {
+        width: 80%;
+    }
+
+    p {
+        width: 83%;
+    }
+    .boutons .button{
+        text-align: center;
+    }
+}
+
+.picpic {
+    overflow: hidden;
+    display: flex;
+    justify-content: end;
+    aspect-ratio: 5 / 4;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.line {
+    background-color: #d1d1d1;
+    width: 100vw;
+    height: 2px;
+}
+
 
 @media (max-width: 900px) {
     #beige {
