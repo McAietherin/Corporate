@@ -82,11 +82,18 @@ body {
 .logo {
     overflow: hidden;
     height: 60px;
+    @include flex(center);
+    color: white;
+    font-size: 12px;
 
     img {
         height: 100%;
         transform: scale(1.9);
         @include position(relative, 12px, -11px);
+    }
+
+    h2 {
+        @include position(relative, $lt: -12px)
     }
 }
 
@@ -120,6 +127,7 @@ nav {
 }
 
 footer {
+    margin-top: 100px;
     background-color: #1c1919;
     color: white;
     font-family: "Urbanist", sans-serif;
@@ -287,7 +295,8 @@ main {
     }
 }
 
-.perks {
+.perks,
+.perks2 {
     margin-top: 65px;
     width: 100%;
     @include flex(start, space-between);
@@ -308,6 +317,43 @@ main {
     p {
         width: 100%;
     }
+
+    h4 {
+        font-size: 21px;
+        font-weight: 650;
+        width: 370px;
+    }
+
+    h5 {
+        font-size: 18px;
+        font-weight: 700;
+    }
+}
+
+.perks2 .perk {
+    gap: 28px;
+}
+
+.tcard {
+    @include flex(center, space-between, column);
+    gap: 3px;
+    margin-top: 9px;
+}
+
+.circimg {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    @include flex($jc: center);
+
+    img {
+        width: 100%;
+    }
+}
+
+#b img {
+    transform: scale(3.2) translateY(10px);
 }
 
 .perkimg {
@@ -347,14 +393,16 @@ main {
     }
 }
 
-.pic2{
+.pic2 {
     position: relative;
     left: 40px
 }
 
 .pictext {
+    opacity: 0;
     @include flex(start, space-between, column);
     gap: 20px;
+
     h6 {
         width: 100%;
     }
@@ -366,16 +414,19 @@ main {
     p {
         width: 83%;
     }
-    .boutons .button{
+
+    .boutons .button {
         text-align: center;
     }
 }
 
 .picpic {
+    opacity: 0;
     overflow: hidden;
     display: flex;
     justify-content: end;
     aspect-ratio: 5 / 4;
+    width: 50%;
     justify-content: center;
     border-radius: 20px;
 }
@@ -386,6 +437,60 @@ main {
     height: 2px;
 }
 
+#trans {
+    background-color: #e8e8e8;
+}
+
+#hund {
+    margin-top: 100px;
+}
+
+.perkimg2 {
+    width: 160px;
+    height: 55px;
+    @include flex(center, center);
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+}
+
+#blacks {
+    .button {
+        color: black;
+        border-color: #1c1919;
+    }
+
+    .inv {
+        color: white;
+        background-color: #1c1919;
+    }
+}
+
+#hund2 {
+    margin-top: 130px;
+    margin-bottom: 90px;
+
+    h2 {
+        width: 600px;
+    }
+
+    p {
+        width: 660px;
+    }
+}
+
+.banner {
+    overflow: hidden;
+    aspect-ratio: 11/6;
+    border-radius: 20px;
+
+    img {
+        width: 100%;
+        @include position(relative, -520px);
+    }
+}
 
 @media (max-width: 900px) {
     #beige {

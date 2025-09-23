@@ -7,6 +7,7 @@ function Header() {
       <div>
         <div className="logo">
           <img src={logo1} alt="logo" />
+          <h2>Corporato</h2>
         </div>
         <ul>
           <li>random</li>
