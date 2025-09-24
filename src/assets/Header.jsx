@@ -10,12 +10,12 @@ function Header() {
           <h2>Corporato</h2>
         </div>
         <ul>
-          <li>random</li>
-          <li>random</li>
-          <li>random</li>
-          <li>random<i class="bi bi-chevron-down"></i></li>
-          <li className='button'>random</li>
-          <li className='button inv'>random</li>
+          <li>Services</li>
+          <li>Solutions</li>
+          <li>About us</li>
+          <li>Resources<i class="bi bi-chevron-down"></i></li>
+          <li className='button'>Contact us</li>
+          <li className='button inv'>Sign up</li>
         </ul>
       </div>
     </nav>

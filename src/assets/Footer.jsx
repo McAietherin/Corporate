@@ -16,7 +16,7 @@ function Footer() {
             <p>Stay updated on the latest insights, trends, and innovations in workspace technology</p>
             <div id="inper">
               <input type="email"placeholder='Enter email' />
-              <div className="button"><p>Subscribe</p></div>
+              <div className="button" id='subscribe'><p>Subscribe</p></div>
             </div>
             <p id="small">By subscribing, you agree to our privacy policy and consent to recieving updates.</p>
           </div>

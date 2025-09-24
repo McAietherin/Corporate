@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import logo2 from '../assets/logo2.png'
 
 function Home() {
   const [activeSlide, setActiveSlide] = useState(0)
@@ -135,7 +136,7 @@ function Home() {
             </div>
           </div>
           <div className="boutons" id='black'>
-            <div className="button">Discover</div>
+            <div className="button" id='gold'>Discover</div>
             <div className="button spc">Learn more<i class="bi bi-chevron-right"></i></div>
           </div>
         </div>
@@ -230,7 +231,7 @@ function Home() {
           <p>Hear from organizations that have transformed their workspaces with our innovative solutions.</p>
           <div className="perks2">
             <div className="perk">
-              <div className="perkimg2"><img src="/src/assets/logo2.png" alt="logo" /></div>
+              <div className="perkimg2"><img src={logo2} alt="logo" /></div>
               <h4>Their approach to workplace design fundamentally changed how we think about productivity and collaboration.</h4>
               <div className="tcard">
                 <div className="circimg">
@@ -241,7 +242,7 @@ function Home() {
               </div>
             </div>
             <div className="perk">
-              <div className="perkimg2"><img src="/src/assets/logo2.png" alt="logo" /></div>
+              <div className="perkimg2"><img src={logo2} alt="logo" /></div>
               <h4>The technology integration was seamless and dramatically improved our team's efficiency.</h4>
               <div className="tcard">
                 <div className="circimg">
@@ -252,7 +253,7 @@ function Home() {
               </div>
             </div>
             <div className="perk">
-              <div className="perkimg2"><img src="/src/assets/logo2.png" alt="logo" /></div>
+              <div className="perkimg2"><img src={logo2} alt="logo" /></div>
               <h4>A game-changing solution that perfectly aligned with our organizational goals and culture.</h4>
               <div className="tcard">
                 <div className="circimg" id='b'>
