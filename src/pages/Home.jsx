@@ -3,6 +3,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import logo2 from '../assets/logo2.png'
+import { Link } from 'react-router-dom'
 
 function Home() {
   const [activeSlide, setActiveSlide] = useState(0)
@@ -105,8 +106,8 @@ function Home() {
                 <h1 className='animl'>Transforming workspaces with cutting-edge technology solutions</h1>
                 <p className='animr'>We design innovative tech environments that empower teams and drive organizational performance. Out approach combines strategic design with advanced technological integration.</p>
                 <div className="boutons animr">
-                  <div className="button inv">Explore</div>
-                  <div className="button">Learn more</div>
+                  <Link to={'/services'}><div className="button inv">Explore</div></Link>
+                  <Link to={'/about-us'}><div className="button">Learn more</div></Link>
                 </div>
               </div>
             </div>
@@ -136,8 +137,8 @@ function Home() {
             </div>
           </div>
           <div className="boutons" id='black'>
-            <div className="button" id='gold'>Discover</div>
-            <div className="button spc">Learn more<i class="bi bi-chevron-right"></i></div>
+            <Link to={'/solutions'}><div className="button" id='gold'>Discover</div></Link>
+            <Link to={'/about-us'}><div className="button spc">Learn more<i class="bi bi-chevron-right"></i></div></Link>
           </div>
         </div>
         <div className='dark'>
@@ -152,8 +153,8 @@ function Home() {
                 <h2>Understanding your unique workplace requirements</h2>
                 <p>We begin by conducting an in-depth analysis of your current workspace, organizational goals, and technological needs. Our experts listen carefully to develop a comprehensive undertanding.</p>
                 <div className="boutons">
-                  <div className="button">Learn more</div>
-                  <div className="button spc">Get started<i class="bi bi-chevron-right"></i></div>
+                  <Link to={'/about-us'}><div className="button">Learn more</div></Link>
+                  <Link to={'/sign-up'}><div className="button spc">Get started<i class="bi bi-chevron-right"></i></div></Link>
                 </div>
               </div>
               <div className="picpic">
@@ -176,8 +177,8 @@ function Home() {
                 <h2>Crafting a tailored technological workplace solution</h2>
                 <p>Our team develops a customized strategy that aligns technological infrastructure with your organizational culture, workflow, and performance objectives.</p>
                 <div className="boutons">
-                  <div className="button">Learn more</div>
-                  <div className="button spc">Get started<i class="bi bi-chevron-right"></i></div>
+                  <Link to={'/about-us'}><div className="button">Learn more</div></Link>
+                  <Link to={'/sign-up'}><div className="button spc">Get started<i class="bi bi-chevron-right"></i></div></Link>
                 </div>
               </div>
             </div>
@@ -194,8 +195,8 @@ function Home() {
                 <h2>Seamless integration of design and technology</h2>
                 <p>We meticulously execute the proposed strategy, ensuring minimal disruption and maximum efficiency during the transformation of your workspace.</p>
                 <div className="boutons">
-                  <div className="button">Learn more</div>
-                  <div className="button spc">Get started<i class="bi bi-chevron-right"></i></div>
+                  <Link to={'/about-us'}><div className="button">Learn more</div></Link>
+                  <Link to={'/sign-up'}><div className="button spc">Get started<i class="bi bi-chevron-right"></i></div></Link>
                 </div>
               </div>
               <div className="picpic">
@@ -218,15 +219,15 @@ function Home() {
                 <h2>Ongoing performance monitoring and enhancement</h2>
                 <p>Our commitment extends beyond implementation. We provide continuous support, performance tracking, and iterative improvements to ensure long-term success.</p>
                 <div className="boutons">
-                  <div className="button">Learn more</div>
-                  <div className="button spc">Get started<i class="bi bi-chevron-right"></i></div>
+                  <Link to={'/about-us'}><div className="button">Learn more</div></Link>
+                  <Link to={'/sign-up'}><div className="button spc">Get started<i class="bi bi-chevron-right"></i></div></Link>
                 </div>
               </div>
             </div>
           </div>
           <div className="line" id='trans'></div>
         </div>
-        <div className='eight betn' id='hund'>
+        <div className='eight betn hund'>
           <h2>Client success stories</h2>
           <p>Hear from organizations that have transformed their workspaces with our innovative solutions.</p>
           <div className="perks2">
@@ -269,8 +270,8 @@ function Home() {
           <h2>Ready to transform your workplace</h2>
           <p>Connect with our experts to explore how we can optimize your technological workspace and drive organizational performance.</p>
           <div className="boutons" id='blacks'>
-            <div className="button inv">Contact us</div>
-            <div className="button">Schedule consultation</div>
+            <Link to={'/contact-us'}><div className="button inv">Contact us</div></Link>
+            <Link to={'/login'}><div className="button">Schedule consultation</div></Link>
           </div>
         </div>
         <div className="eight banner">

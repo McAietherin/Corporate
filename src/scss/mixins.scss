@@ -18,3 +18,9 @@
     font-weight: $fw;
     font-size: $fs;
 }
+
+@mixin h2() {
+    font-size: 45px;
+    font-weight: 630;
+    line-height: 55px;
+}

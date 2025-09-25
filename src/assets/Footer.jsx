@@ -1,14 +1,15 @@
 import React from 'react'
 import logo1 from './logo1.png'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
     <footer>
       <div>
         <div id="box">
-          <div className="logo">
+          <Link to={'/'}><div className="logo">
             <img src={logo1} alt="logo" />
-          </div>
+          </div></Link>
           <p>Company</p>
           <p>Resources</p>
           <p>Media</p>
