@@ -3,7 +3,8 @@ import React from 'react'
 function Aboutus() {
   return (
     <>
-      about us
+      <h1>About us</h1>
+      <h2>Random</h2>
     </>
   )
 }

@@ -3,7 +3,8 @@ import React from 'react'
 function Services() {
   return (
     <>
-       services
+       <h1>Services</h1>
+       <h2>Random</h2>
     </>
   )
 }

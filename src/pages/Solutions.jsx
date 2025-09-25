@@ -3,7 +3,8 @@ import React from 'react'
 function Solutions() {
   return (
     <>
-      solutions
+      <h1>Solutions</h1>
+      <h2>Random</h2>
     </>
   )
 }
