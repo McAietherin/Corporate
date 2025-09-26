@@ -375,7 +375,7 @@ main {
 
 .perkimg {
     filter: brightness(80%);
-    height: 55%;
+    height: 49%;
     overflow: hidden;
     border-radius: 20px;
     margin-bottom: 13px;
@@ -741,9 +741,55 @@ aside {
     padding: 80px 0;
 }
 
+.bgblack{
+    background-color: #1c1919;
+    color: white;
+    h2{
+        @include h2();
+    }
+}
 
+.cardsa{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
 
+.carde{
+    height: 64vh;
+    margin: 60px 0 90px 0;
+}
 
+.juan{
+    padding-top: 60px;
+}
+
+.cardimage{
+    overflow: hidden;
+    height: 100%;
+    img{
+        width: 100%;
+        filter: brightness(70%);
+        z-index: -1;
+    }
+}
+.cardoverlay{
+    position: relative;
+    bottom: 90px;
+    h3{
+        font-size: 32px;
+    }
+}
+
+.randomman{
+    margin-top: 100px;
+    h2{
+        @include h2();
+    }
+    p{
+        font-size: $p;
+    }
+}
 
 
 

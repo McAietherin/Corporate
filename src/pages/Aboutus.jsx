@@ -60,8 +60,45 @@ function Aboutus() {
         </Slider>
 
       </section>
-      <section>
+      <div className="largespace"></div>
+      <section className='bgblack'>
+        <div className="eight betn juan">
+          <h2>Integrity and insight in consulting</h2>
+        </div>
+        <div className="cardsa eight betn">
+          <div className="carde animl">
+            <div className="cardimage">
+              <img src="https://images.unsplash.com/photo-1548783300-70b41bc84f56?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image" />
+            </div>
+            <div className="cardoverlay">
+              <h3>Integrity</h3>
+            </div>
+          </div>
+          <div className="carde animr">
+            <div className="cardimage">
+              <img src="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image" />
+            </div>
+            <div className="cardoverlay">
+              <h3>Innovation</h3>
+            </div>
+          </div>
+          <div className="carde animr">
+            <div className="cardimage">
+              <img src="https://plus.unsplash.com/premium_photo-1673380327485-c00f4bd44191?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image" />
+            </div>
+            <div className="cardoverlay">
+              <h3>Transformation</h3>
+            </div>
+          </div>
+        </div>
       </section>
+      <div className='eight betn randomman'>
+        <h2>Ready to transform your workplace</h2>
+        <p>Connect with our experts to explore how we can optimize your technological workspace and drive organizational performance.</p>
+        <div className="boutons" id='blacks'>
+          <Link to={'/login'}><div className="button inv">Schedule consultation</div></Link>
+        </div>
+      </div>
     </>
   )
 }
