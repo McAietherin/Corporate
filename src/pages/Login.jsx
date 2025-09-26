@@ -20,7 +20,6 @@ function Login() {
                         <input type="password" placeholder='Password' />
                         <p id='forgot'>Forgot password?</p>
                         <input type="submit" placeholder='Log In' className='submit' />
-                        <p>Or,</p>
                         <div className="button" id='google'>
                             <i class="bi bi-google"></i>
                             <p>Log in with google</p>

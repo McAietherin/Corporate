@@ -537,6 +537,10 @@ main {
 
     main {
         width: 50%;
+
+        p {
+            width: 80%;
+        }
     }
 
     aside {
@@ -577,11 +581,28 @@ aside {
         font-weight: 500;
     }
 
+    textarea {
+        all: unset;
+        padding: 11px 19px;
+        border: 2px solid #8080808f;
+        background-color: white;
+        border-radius: 10px;
+        font-weight: 500;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        height: 90px;
+    }
+
     .submit {
         background-color: #1c1919;
         color: white;
         cursor: pointer;
     }
+}
+
+#file {
+    all: unset;
 }
 
 .imgm img {
@@ -634,7 +655,7 @@ aside {
     }
 }
 
-#google{
+#google {
     display: flex;
     gap: 20px;
     color: black;
@@ -642,23 +663,83 @@ aside {
     border-color: gray;
 }
 
-#google:hover{
+#google:hover {
     background-color: gray;
     cursor: pointer;
     color: white;
 }
 
+#field2 {
+    height: 70vh;
 
+    .overlay {
+        top: 40%;
+        left: 40%;
+        align-items: start;
+    }
+}
 
+#about {
+    h1 {
+        font-size: $h1;
+    }
 
+    h2 {
+        @include h2();
+    }
 
+    p {
+        font-size: $p;
+    }
+}
 
+.flex1 {
+    width: 88%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+}
 
+.flextext {
+    border: black;
+    @include flex(center, start, column);
+    gap: 35px;
+}
 
+.flexpic {
+    overflow: hidden;
+    @include flex(center, center);
 
+    img {
+        width: 100%;
+    }
+}
 
+.space {
+    margin-top: 60px;
+}
 
+.higher {
+    margin-top: 30px;
+}
 
+.slide {
+    position: relative;
+    height: 80vh;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px #0000001a;
+        object-fit: cover;
+    }
+}
+
+.largespace{
+    padding: 80px 0;
+}
 
 
 
