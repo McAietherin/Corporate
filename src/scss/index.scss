@@ -670,10 +670,10 @@ aside {
 }
 
 #field2 {
-    height: 70vh;
+    height: 80vh;
 
     .overlay {
-        top: 40%;
+        top: 45%;
         left: 40%;
         align-items: start;
     }
@@ -710,6 +710,7 @@ aside {
 .flexpic {
     overflow: hidden;
     @include flex(center, center);
+    border-radius: 20px;
 
     img {
         width: 100%;
@@ -737,62 +738,102 @@ aside {
     }
 }
 
-.largespace{
+.largespace {
     padding: 80px 0;
 }
 
-.bgblack{
+.bgblack {
     background-color: #1c1919;
     color: white;
-    h2{
+
+    h2 {
         @include h2();
     }
 }
 
-.cardsa{
+.cardsa {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
 }
 
-.carde{
+.carde {
     height: 64vh;
     margin: 60px 0 90px 0;
+    opacity: 0;
 }
 
-.juan{
+.juan {
     padding-top: 60px;
 }
 
-.cardimage{
+.cardimage {
     overflow: hidden;
     height: 100%;
-    img{
+    border-radius: 20px;
+
+    img {
         width: 100%;
         filter: brightness(70%);
         z-index: -1;
     }
 }
-.cardoverlay{
+
+.cardoverlay {
     position: relative;
     bottom: 90px;
-    h3{
+
+    h3 {
         font-size: 32px;
     }
 }
 
-.randomman{
+.randomman {
     margin-top: 100px;
-    h2{
+
+    h2 {
         @include h2();
     }
-    p{
+
+    p {
         font-size: $p;
     }
 }
 
+.card1, .card2 {
+    margin-top: 100px;
+    width: 85%;
+    @include flex(start, space-between);
+    gap: 60px;
 
+    h3 {
+        font-size: 32px;
+    }
 
+    p {
+        font-size: $p;
+    }
+}
+
+.cardcont {
+    @include flex(stretch, space-between, column);
+    gap: 25px;
+}
+
+.cardcimg {
+    overflow: hidden;
+    height: 230px;
+    border-radius: 20px;
+
+    img {
+        width: 100%;
+    }
+}
+
+.cardctext {
+    @include flex(center, space-between, column);
+    gap: 5px;
+}
 
 
 

@@ -1,10 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 function Aboutus() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      const cardthreshold = 1800
+      if (scrollY >= cardthreshold) {
+        const cardsa = document.querySelectorAll('.cardsa .carde')
+        cardsa.forEach((carde, index) => {
+          if (!carde.classList.contains('animl') &&
+            !carde.classList.contains('animu') &&
+            !carde.classList.contains('animr')) {
+            if (index === 0) carde.classList.add('animl')
+            else if (index === 1) carde.classList.add('animu')
+            else if (index === 2) carde.classList.add('animr')
+          }
+        })
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const settings = {
     dots: true,
@@ -66,7 +87,7 @@ function Aboutus() {
           <h2>Integrity and insight in consulting</h2>
         </div>
         <div className="cardsa eight betn">
-          <div className="carde animl">
+          <div className="carde">
             <div className="cardimage">
               <img src="https://images.unsplash.com/photo-1548783300-70b41bc84f56?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image" />
             </div>
@@ -74,7 +95,7 @@ function Aboutus() {
               <h3>Integrity</h3>
             </div>
           </div>
-          <div className="carde animr">
+          <div className="carde">
             <div className="cardimage">
               <img src="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image" />
             </div>
@@ -82,7 +103,7 @@ function Aboutus() {
               <h3>Innovation</h3>
             </div>
           </div>
-          <div className="carde animr">
+          <div className="carde">
             <div className="cardimage">
               <img src="https://plus.unsplash.com/premium_photo-1673380327485-c00f4bd44191?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image" />
             </div>
