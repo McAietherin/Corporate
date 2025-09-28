@@ -45,9 +45,9 @@ function Footer() {
           <ul><li>&copy; 2025 Tech Workspace. All rights reserved</li></ul>
         </div>
         <div id="ender">
-          <p>Privacy policy</p>
+          <p><Link to={'/privacy-policy'}>Privacy policy</Link></p>
           <ul>
-            <li>Terms of service</li>
+            <li><Link to={'/terms-services'}>Terms of service</Link></li>
             <li>Cookies settings</li>
             <li>Customer service</li>
           </ul>

@@ -11,16 +11,16 @@ function Header() {
           <h2>Corporato</h2>
         </div></Link>
         <ul>
+          <li><Link to={'/'}>Home</Link></li>
           <li><Link to={'/services'}>Services</Link></li>
-          <li><Link to={'/solutions'}>Solutions</Link></li>
           <li><Link to={'/about-us'}>About us</Link></li>
           <li className='hover'>Resources<i class="bi bi-chevron-down"></i>
             <div className="dropdown">
               <div id="sizer"></div>
               <ul>
-                <li>Random</li>
-                <li>Random</li>
-                <li>Random</li>
+                <li><Link to={'/terms-services'}>Terms of Service</Link></li>
+                <li><Link to={'/faq'}>FAQ</Link></li>
+                <li><Link to={'/privacy-policy'}>Privacy policy</Link></li>
               </ul>
             </div>
           </li>

@@ -638,6 +638,7 @@ aside {
             text-align: start;
             border: 2px solid black;
             border-top: none;
+            width: 100%;
         }
     }
 }
@@ -800,7 +801,8 @@ aside {
     }
 }
 
-.card1, .card2 {
+.card1,
+.card2 {
     margin-top: 100px;
     width: 85%;
     @include flex(start, space-between);
@@ -813,11 +815,16 @@ aside {
     p {
         font-size: $p;
     }
+
+    .cardcont {
+        width: 33%;
+    }
 }
 
 .cardcont {
     @include flex(stretch, space-between, column);
     gap: 25px;
+    opacity: 0;
 }
 
 .cardcimg {
@@ -830,14 +837,76 @@ aside {
     }
 }
 
+.card2black {
+    background-color: #1c1919;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 100px;
+}
+
 .cardctext {
     @include flex(center, space-between, column);
     gap: 5px;
+    text-align: center;
+}
+
+#jusidk {
+    width: 80%;
+}
+
+.ban2 {
+    margin: 100px auto;
 }
 
 
+.faqitem {
+    width: 88%;
+    margin: 40px auto;
 
+    .faqheader {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
 
+        h3 {
+            font-size: 28px;
+        }
+
+        .toggle {
+            font-size: 1.9rem;
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+    }
+
+    .faqbody {
+        margin-top: 1rem;
+        animation: fadeIn 0.3s ease;
+
+        p {
+            font-size: $p;
+        }
+    }
+}
+
+#blacker {
+    background-color: #1c1919;
+    color: white;
+    .randomman{
+        padding: 90px 0;
+    }
+}
+
+.bigh1 {
+    font-size: $h1;
+}
+
+.mbody {
+    width: 80%;
+    font-size: $p;
+    margin: auto;
+    line-height: 29px;
+}
 
 @media (max-width: 900px) {
     #beige {

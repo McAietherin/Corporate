@@ -5,9 +5,11 @@ import Errore from './pages/Errore'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Services from './pages/Services'
-import Solutions from './pages/Solutions'
 import Aboutus from './pages/Aboutus'
 import Contactus from './pages/Contactus'
+import FAQ from './pages/resources/FAQ'
+import Privacypolicy from './pages/resources/Privacypolicy'
+import Terms from './pages/resources/Terms'
 
 function Body() {
   return (
@@ -17,9 +19,11 @@ function Body() {
         <Route path='/sign-up' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/services' element={<Services />} />
-        <Route path='/solutions' element={<Solutions />} />
         <Route path='/about-us' element={<Aboutus />} />
         <Route path='/contact-us' element={<Contactus />} />
+        <Route path='/faq' element={<FAQ />} />
+        <Route path='/privacy-policy' element={<Privacypolicy />} />
+        <Route path='/terms-services' element={<Terms />} />
         <Route path='*' element={<Errore />} />
       </Routes>
     </>
