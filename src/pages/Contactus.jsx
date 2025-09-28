@@ -7,7 +7,7 @@ function Contactus() {
     return (
         <>
             <div className='eight maflex'>
-                <main className='animl'>
+                <main className='animl dissapear'>
                     <h1>Report any problems or give suggestions</h1>
                     <p>Let us know how we can assist you. Whether you found bugs, had queries, suggestions, or partnership offers.</p>
                     <div className="imgm">

@@ -7,7 +7,7 @@ function Signup() {
     return (
         <>
             <div className='eight maflex'>
-                <main className='animl'>
+                <main className='animl dissapear'>
                     <h1>Join our corporate community</h1>
                     <p>Sign up now to connect with professionals and unlock exclusive business insights and resources.</p>
                     <div className="imgm">

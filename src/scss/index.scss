@@ -892,7 +892,8 @@ aside {
 #blacker {
     background-color: #1c1919;
     color: white;
-    .randomman{
+
+    .randomman {
         padding: 90px 0;
     }
 }
@@ -921,6 +922,21 @@ aside {
 
         a {
             top: 58%;
+        }
+    }
+
+    .dissapear {
+        display: none;
+    }
+
+    .maflex {
+        display: block;
+
+        aside {
+            width: 100%;
+        }
+        h2{
+            margin-top: 100px;
         }
     }
 }

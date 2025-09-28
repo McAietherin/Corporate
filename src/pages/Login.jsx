@@ -7,7 +7,7 @@ function Login() {
     return (
         <>
             <div className='eight maflex'>
-                <main className='animl'>
+                <main className='animl dissapear'>
                     <h1>Welcome back to our corporate community</h1>
                     <p>Log in to reconnect with professionals and utilize exclusive business insights and resources.</p>
                     <div className="imgm">
