@@ -8,22 +8,34 @@ function Aboutus() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY
-      const cardthreshold = 1800
-      if (scrollY >= cardthreshold) {
-        const cardsa = document.querySelectorAll('.cardsa .carde')
-        cardsa.forEach((carde, index) => {
-          if (!carde.classList.contains('animl') &&
-            !carde.classList.contains('animu') &&
-            !carde.classList.contains('animr')) {
-            if (index === 0) carde.classList.add('animl')
-            else if (index === 1) carde.classList.add('animu')
-            else if (index === 2) carde.classList.add('animr')
+      const cardsa = document.querySelectorAll('.cardsa .carde')
+      const isMobile = window.innerWidth <= 900
+
+      cardsa.forEach((carde, index) => {
+        const baseThreshold = 1900
+        const offset = isMobile ? index * 700 : 0
+        const threshold = baseThreshold + offset
+
+        if (scrollY >= threshold) {
+          const hasAnim = carde.classList.contains('animl') ||
+            carde.classList.contains('animu') ||
+            carde.classList.contains('animr')
+
+          if (!hasAnim) {
+            if (isMobile) {
+              const animClass = index % 2 === 0 ? 'animl' : 'animr'
+              carde.classList.add(animClass)
+            } else {
+              if (index === 0) carde.classList.add('animl')
+              else if (index === 1) carde.classList.add('animu')
+              else if (index === 2) carde.classList.add('animr')
+            }
           }
-        })
-      }
+        }
+      })
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
