@@ -20,44 +20,79 @@ function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      const perksThreshold = 700
-      if (scrollY >= perksThreshold) {
-        const perks = document.querySelectorAll('.perk')
-        perks.forEach((perk, index) => {
-          if (!perk.classList.contains('animl') &&
-            !perk.classList.contains('animu') &&
-            !perk.classList.contains('animr')) {
-            if (index === 0) perk.classList.add('animl')
-            else if (index === 1) perk.classList.add('animu')
-            else if (index === 2) perk.classList.add('animr')
-          }
-        })
-      }
-      const perks2Threshold = 4700
-      if (scrollY >= perks2Threshold) {
-        const perks2 = document.querySelectorAll('.perks2 .perk')
-        perks2.forEach((perk, index) => {
-          if (!perk.classList.contains('animl') &&
-            !perk.classList.contains('animu') &&
-            !perk.classList.contains('animr')) {
-            if (index === 0) perk.classList.add('animl')
-            else if (index === 1) perk.classList.add('animu')
-            else if (index === 2) perk.classList.add('animr')
-          }
-        })
-      }
+      const scrollY = window.scrollY;
+      const isNarrow = window.innerWidth <= 1250
+      const isMobile = window.innerWidth <= 900
 
-      const picsThresholds = [1500, 2300, 3100, 3900]
+      const perks = document.querySelectorAll('.perks .perk')
+      perks.forEach((perk, index) => {
+        const threshold = isNarrow ? 915 + index * 500 : 700
+        const hasAnim = perk.classList.contains('animl') ||
+          perk.classList.contains('animu') ||
+          perk.classList.contains('animr')
+
+        if (!hasAnim) {
+          if (scrollY >= threshold) {
+            if (isNarrow) {
+              const animClass = index % 2 === 0 ? 'animl' : 'animr'
+              perk.classList.add(animClass)
+            } else {
+              if (index === 0) perk.classList.add('animl')
+              else if (index === 1) perk.classList.add('animu')
+              else if (index === 2) perk.classList.add('animr')
+            }
+          }
+        }
+
+      });
+
+      const perks2 = document.querySelectorAll('.perks2 .perk')
+      perks2.forEach((perk, index) => {
+        const threshold = isMobile
+          ? 6950 + index * 470
+          : isNarrow
+            ? 6300 + index * 400
+            : 4700
+
+        const hasAnim = perk.classList.contains('animl') ||
+          perk.classList.contains('animu') ||
+          perk.classList.contains('animr')
+
+        if (!hasAnim && scrollY >= threshold) {
+          if (isMobile) {
+            const animClass = index % 2 === 0 ? 'animl' : 'animr'
+            perk.classList.add(animClass)
+          } else if (isNarrow) {
+            const animClass = index % 2 === 0 ? 'animl' : 'animr'
+            perk.classList.add(animClass)
+          } else {
+            if (index === 0) perk.classList.add('animl')
+            else if (index === 1) perk.classList.add('animu')
+            else if (index === 2) perk.classList.add('animr')
+          }
+        }
+      })
+
       const pics = document.querySelectorAll('.pics')
-
       pics.forEach((section, index) => {
-        if (scrollY >= picsThresholds[index]) {
-          const pictext = section.querySelector('.pictext')
-          const picpic = section.querySelector('.picpic')
+        const threshold = isMobile
+          ? 2800 + index * 1028
+          : isNarrow
+            ? 3200 + index * 800
+            : [1500, 2300, 3100, 3900][index]
 
-          if (!pictext.classList.contains('animl') &&
-            !pictext.classList.contains('animr')) {
+        const pictext = section.querySelector('.pictext')
+        const picpic = section.querySelector('.picpic')
+
+        const hasAnim = pictext.classList.contains('animl') ||
+          pictext.classList.contains('animr')
+
+        if (scrollY >= threshold && !hasAnim) {
+          if (isMobile) {
+            const animClass = index % 2 === 0 ? 'animl' : 'animr'
+            pictext.classList.add(animClass)
+            picpic.classList.add(animClass)
+          } else {
             if (index % 2 === 0) {
               pictext.classList.add('animl')
               picpic.classList.add('animr')
@@ -102,7 +137,7 @@ function Home() {
                 src={src}
                 alt={`Slide ${i + 1}`}
                 className='grow' />
-              <div className="overlay">
+              <div className="overlay" id='bobo'>
                 <h1 className='animl'>Transforming workspaces with cutting-edge technology solutions</h1>
                 <p className='animr'>We design innovative tech environments that empower teams and drive organizational performance. Out approach combines strategic design with advanced technological integration.</p>
                 <div className="boutons animr">
@@ -113,6 +148,14 @@ function Home() {
             </div>
           ))}
         </Slider>
+        <div className="negverlay eight betn">
+          <h1 className='animl'>Transforming workspaces with cutting-edge technology solutions</h1>
+          <p className='animr'>We design innovative tech environments that empower teams and drive organizational performance. Out approach combines strategic design with advanced technological integration.</p>
+          <div className="boutons animr nefer">
+            <Link to={'/services'}><div className="button">Explore</div></Link>
+            <Link to={'/about-us'}><div className="button spc">Learn more</div></Link>
+          </div>
+        </div>
       </section>
       <main>
         <div className='eight betn'>
@@ -138,7 +181,7 @@ function Home() {
           </div>
           <div className="boutons" id='black'>
             <Link to={'/solutions'}><div className="button" id='gold'>Discover</div></Link>
-            <Link to={'/about-us'}><div className="button spc">Learn more<i class="bi bi-chevron-right"></i></div></Link>
+            <Link to={'/about-us'}><div className="button spc">Learn more<i className="bi bi-chevron-right"></i></div></Link>
           </div>
         </div>
         <div className='dark'>
@@ -154,7 +197,7 @@ function Home() {
                 <p>We begin by conducting an in-depth analysis of your current workspace, organizational goals, and technological needs. Our experts listen carefully to develop a comprehensive undertanding.</p>
                 <div className="boutons">
                   <Link to={'/about-us'}><div className="button">Learn more</div></Link>
-                  <Link to={'/sign-up'}><div className="button spc">Get started<i class="bi bi-chevron-right"></i></div></Link>
+                  <Link to={'/sign-up'}><div className="button spc">Get started<i className="bi bi-chevron-right"></i></div></Link>
                 </div>
               </div>
               <div className="picpic">
@@ -178,7 +221,7 @@ function Home() {
                 <p>Our team develops a customized strategy that aligns technological infrastructure with your organizational culture, workflow, and performance objectives.</p>
                 <div className="boutons">
                   <Link to={'/about-us'}><div className="button">Learn more</div></Link>
-                  <Link to={'/sign-up'}><div className="button spc">Get started<i class="bi bi-chevron-right"></i></div></Link>
+                  <Link to={'/sign-up'}><div className="button spc">Get started<i className="bi bi-chevron-right"></i></div></Link>
                 </div>
               </div>
             </div>
@@ -196,7 +239,7 @@ function Home() {
                 <p>We meticulously execute the proposed strategy, ensuring minimal disruption and maximum efficiency during the transformation of your workspace.</p>
                 <div className="boutons">
                   <Link to={'/about-us'}><div className="button">Learn more</div></Link>
-                  <Link to={'/sign-up'}><div className="button spc">Get started<i class="bi bi-chevron-right"></i></div></Link>
+                  <Link to={'/sign-up'}><div className="button spc">Get started<i className="bi bi-chevron-right"></i></div></Link>
                 </div>
               </div>
               <div className="picpic">
@@ -220,7 +263,7 @@ function Home() {
                 <p>Our commitment extends beyond implementation. We provide continuous support, performance tracking, and iterative improvements to ensure long-term success.</p>
                 <div className="boutons">
                   <Link to={'/about-us'}><div className="button">Learn more</div></Link>
-                  <Link to={'/sign-up'}><div className="button spc">Get started<i class="bi bi-chevron-right"></i></div></Link>
+                  <Link to={'/sign-up'}><div className="button spc">Get started<i className="bi bi-chevron-right"></i></div></Link>
                 </div>
               </div>
             </div>

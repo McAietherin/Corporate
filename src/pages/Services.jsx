@@ -5,34 +5,45 @@ function Services() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY
-      const card1Threshold = 500
-      const card1Container = document.querySelector('.card1')
-      if (card1Container && scrollY >= card1Threshold) {
-        const card1Items = card1Container.querySelectorAll('.cardcont')
-        card1Items.forEach((cardcont, index) => {
-          if (!cardcont.classList.contains('animl') &&
-            !cardcont.classList.contains('animu') &&
-            !cardcont.classList.contains('animr')) {
-            if (index === 0) cardcont.classList.add('animl')
-            else if (index === 1) cardcont.classList.add('animu')
-            else if (index === 2) cardcont.classList.add('animr')
+      const isMobile = window.innerWidth <= 1250
+
+      const animateCards = (containerSelector, baseThreshold, offsetStep) => {
+        const container = document.querySelector(containerSelector)
+        if (!container) return
+
+        const items = container.querySelectorAll('.cardcont')
+        items.forEach((card, index) => {
+          const threshold = isMobile
+            ? baseThreshold + index * offsetStep
+            : baseThreshold
+
+          if (scrollY >= threshold) {
+            const hasAnim = card.classList.contains('animl') ||
+              card.classList.contains('animu') ||
+              card.classList.contains('animr')
+            if (!hasAnim) {
+              if (isMobile) {
+                const animClass = index % 2 === 0 ? 'animl' : 'animr'
+                card.classList.add(animClass)
+              } else {
+                if (index === 0) card.classList.add('animl')
+                else if (index === 1) card.classList.add('animu')
+                else if (index === 2) card.classList.add('animr')
+              }
+            }
           }
         })
       }
 
-      const card2Threshold = 1800
-      if (scrollY >= card2Threshold) {
-        const card2 = document.querySelectorAll('.card2 .cardcont')
-        card2.forEach((cardcont, index) => {
-          if (!cardcont.classList.contains('animl') &&
-            !cardcont.classList.contains('animu') &&
-            !cardcont.classList.contains('animr')) {
-            if (index === 0) cardcont.classList.add('animl')
-            else if (index === 1) cardcont.classList.add('animu')
-            else if (index === 2) cardcont.classList.add('animr')
-          }
-        })
-      }
+      const card1Offset = isMobile ? 400 : 0
+      const card2Offset = isMobile ? 700 : 0
+
+
+      const card1Base = isMobile ? 100 : 500
+      const card2Base = isMobile ? 1750 : 1800
+
+      animateCards('.card1', card1Base, card1Offset)
+      animateCards('.card2', card2Base, card2Offset)
 
       const picsThresholds = [1500, 2300, 3100, 3900]
       const pics = document.querySelectorAll('.pics')

@@ -50,7 +50,7 @@ function Header() {
             <Link to={'/sign-up'}><li className='button inv'>Sign up</li></Link>
           </ul>
           <div id="dropper" ref={dropperRef} onClick={() => setIsOpen(!isOpen)}>
-            <i class="bi bi-list"></i>
+            <i className="bi bi-list"></i>
           </div>
         </div>
       </nav>

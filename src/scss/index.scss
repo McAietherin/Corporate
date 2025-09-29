@@ -261,7 +261,6 @@ footer {
         top: 43%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 2;
         text-align: center;
         color: white;
         padding: 0 2rem;
@@ -349,6 +348,7 @@ main {
     height: 50vh;
     @include flex(center, $fd: column);
     gap: 23px;
+    height: fit-content;
 
     h3 {
         font-size: 32px;
@@ -399,7 +399,7 @@ main {
 
 .perkimg {
     filter: brightness(80%);
-    height: 49%;
+    height: 17vw;
     overflow: hidden;
     border-radius: 20px;
     margin-bottom: 13px;
@@ -539,7 +539,7 @@ main {
 
     img {
         width: 100%;
-        @include position(relative, -520px);
+        @include position(relative, -39vw);
     }
 }
 
@@ -695,12 +695,17 @@ aside {
 }
 
 #field2 {
-    height: 80vh;
+    height: 43vw;
 
     .overlay {
-        top: 45%;
+        top: 25vw;
         left: 40%;
         align-items: start;
+
+        h1 {
+            width: 38%;
+            text-align: start;
+        }
     }
 }
 
@@ -854,7 +859,7 @@ aside {
 
 .cardcimg {
     overflow: hidden;
-    height: 230px;
+    height: 16vw;
     border-radius: 20px;
 
     img {
@@ -934,6 +939,22 @@ aside {
     line-height: 29px;
 }
 
+.negverlay {
+    display: none;
+
+    .boutons {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.nefer{
+    .button{
+        border-color: #1c1919;
+        color: black;
+    }
+}
+
 @media (max-width: 900px) {
     #beige {
         h1 {
@@ -966,13 +987,6 @@ aside {
         }
     }
 
-    .field {
-        h1 {
-            font-size: 55px;
-            width: 175%;
-        }
-    }
-
     .cardsa {
         grid-template-columns: 1fr;
     }
@@ -984,12 +998,38 @@ aside {
     .carde {
         margin-bottom: -41px;
     }
+
+    .waves {
+        display: none;
+    }
+
 }
 
 @media(max-width: 920px) {
     #box {
         grid-template-columns: 1fr 1fr 1fr;
         row-gap: 35px;
+    }
+
+    .pics {
+        flex-direction: column;
+
+        >div {
+            width: 90%;
+        }
+    }
+
+    .pictext {
+        @include flex(center, center, column);
+        width: 100% !important;
+
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .pic2 {
+        left: 0;
     }
 
     #it1 {
@@ -1122,6 +1162,20 @@ aside {
         text-align: center;
         margin: 15px auto 0 auto;
     }
+
+    #field2 {
+        height: 55vw;
+
+        .overlay {
+            top: 43vw !important;
+            gap: 7px;
+        }
+
+        .boutons {
+            @include flex(center, space-between, column);
+            gap: 10px;
+        }
+    }
 }
 
 @media(max-width: 302px) {
@@ -1134,7 +1188,47 @@ aside {
     #ender {
         gap: 20px;
     }
+
+    #field2 {
+        .overlay {
+            top: 30vw;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        .button {
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+    }
+
+    .negverlay {
+        display: block;
+        margin-top: 40px;
+        @include flex(center, space-between, column);
+    }
+
+    #bobo {
+        display: none;
+    }
+
+    main {
+        h2 {
+            width: 100% !important;
+        }
+
+        p {
+            width: 100% !important;
+        }
+    }
+
+    .perk h4 {
+        width: 86vw;
+    }
 }
+
 
 @media(max-width:400px) {
     .j1 {
@@ -1165,6 +1259,11 @@ aside {
             width: 60px;
         }
     }
+
+    main h2 {
+        font-size: 38px;
+        line-height: 48px;
+    }
 }
 
 @media (max-width: 1250px) {
@@ -1179,5 +1278,48 @@ aside {
     .flex1 {
         grid-template-columns: 1fr;
         row-gap: 50px;
+    }
+
+    #bobo {
+        top: 47%;
+        width: 85%;
+    }
+
+    .card1,
+    .card2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cardcont {
+        width: 100% !important;
+    }
+
+    .cardcimg {
+        height: 50vw;
+    }
+
+    #bobo h1 {
+        font-size: 45px;
+    }
+
+    .perks,
+    .perks2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 80px;
+
+        .perk {
+            width: 96%;
+
+            h4 {
+                width: 80%;
+            }
+        }
+    }
+
+    .perkimg {
+        height: 49vw;
+        width: 100%;
     }
 }

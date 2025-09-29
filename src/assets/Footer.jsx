@@ -37,11 +37,11 @@ function Footer() {
             <li>Follow us</li>
           </ul>
           <ul>
-            <li><i class="bi bi-facebook"></i>Facebook</li>
-            <li><i class="bi bi-instagram"></i>Instagram</li>
-            <li><i class="bi bi-linkedin"></i>LinkedIn</li>
-            <li><i class="bi bi-youtube"></i>Youtube</li>
-            <li><i class="bi bi-twitter-x"></i>Twitter(X)</li>
+            <li><i className="bi bi-facebook"></i>Facebook</li>
+            <li><i className="bi bi-instagram"></i>Instagram</li>
+            <li><i className="bi bi-linkedin"></i>LinkedIn</li>
+            <li><i className="bi bi-youtube"></i>Youtube</li>
+            <li><i className="bi bi-twitter-x"></i>Twitter(X)</li>
           </ul>
           <div id='it9'>
             <br />
